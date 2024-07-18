@@ -22,13 +22,17 @@ Route::get('/blog', function() {
 })->name('blog');
 
 Route::get('/courses', function() {
-    return redirect('/blog')->name('blog-redirect');
-});
+    return redirect()->route('blog');
+})->name('blog-redirect');
 
 Route::get('/blog/{id}', function ($id) {
     return 'This is a post with the id of ' . $id . '!';  
 })->name('blog-single-post');
 
+
+Route::fallback(function () {
+    return 'Still got somewhere!';
+});
 
 // GET
 // POST
