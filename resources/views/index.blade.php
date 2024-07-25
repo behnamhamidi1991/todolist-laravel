@@ -3,5 +3,7 @@
 </div>
 
 @isset($name)
-The name is: {{ $name }}
+<div>
+    The name is: {{ $name }}
+</div>
 @endisset
